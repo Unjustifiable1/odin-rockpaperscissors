@@ -1,4 +1,11 @@
-let moves = ["rock", "paper", "scissors"];
+const moves = ["rock", "paper", "scissors"];
+const results = ["Tied", "Win", "Lose"];
+const outcomes = {
+    tie: "Try again ;)",
+    rock: "Rock crushes Scissors",
+    paper: "Paper wraps Rock",
+    scissors: "Scissors cut Paper"
+}
 
 function getComputerChoice () {
     let compMove = moves[Math.floor(Math.random()*moves.length)];
@@ -16,4 +23,4 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
