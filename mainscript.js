@@ -10,17 +10,38 @@ const outcomes = {
 function getComputerChoice () {
     let compMove = moves[Math.floor(Math.random()*moves.length)];
 
-    console.log(compMove);
+    console.log("Computer selected " + compMove);
     return compMove;
 }
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    console.log("Player selected " + playerSelection);
 
+    if (playerSelection === computerSelection) {
+        return "Tied";
+    }
 
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "Win";
+    } else {
+        return "Lose";
+    }
+
+    if (playerSelection === "paper" && computerSelection === "rock") {
+        return "Win";
+    } else {
+        return "Lose";
+    }
+
+    if (playerSelection === "scissors" && computerSelection === "paper") {
+        return "Win";
+    } else {
+        return "Lose";
+    }
 }
 
-const playerSelection = "rock";
+const playerSelection = "ScisSoRS";
 const computerSelection = getComputerChoice();
 
-// console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
