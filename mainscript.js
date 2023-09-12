@@ -48,13 +48,18 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 1; i <= 5; i++){
-        console.log(playRound(playerSelection, getComputerChoice()));
-        console.log("Round " + i + " score: " + score + "\n");
+        console.log(playRound(getPlayerChoice(), getComputerChoice())); // switch between "playerSelection" and getPlayerChoice()
+        console.log("Round " + i + " Score: " + score + "\n");
     }
     console.log("Final Score: " + score)
 }
 
-const playerSelection = "rock";
+// const playerSelection = "rock";
+function getPlayerChoice() {
+    let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "Rock");
+    return playerSelection;
+}
+
 // const computerSelection = getComputerChoice();
 
 // const singleRound = playRound(playerSelection, computerSelection);
