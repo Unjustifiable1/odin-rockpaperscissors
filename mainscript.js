@@ -23,25 +23,33 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        return results[1];
-    } else {
-        return results[2];
+        return (results[1] + outcomes[playerSelection]);
+    } else if (playerSelection === "rock") {
+        return (results[2] + outcomes[computerSelection]);
     }
 
     if (playerSelection === "paper" && computerSelection === "rock") {
-        return results[1];
-    } else {
-        return results[2];
+        return (results[1] + outcomes[playerSelection]);
+    } else if (playerSelection === "paper") {
+        return (results[2] + outcomes[computerSelection]);
     }
 
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        return results[1];
-    } else {
-        return results[2];
+        return (results[1] + outcomes[playerSelection]);
+    } else if (playerSelection === "scissors") {
+        return (results[2] + outcomes[computerSelection]);
     }
 }
 
-const playerSelection = "ScisSoRS";
+let score = 0;
+
+function game() {
+
+}
+
+const playerSelection = "paper";
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
+
+// const playGame = game();
