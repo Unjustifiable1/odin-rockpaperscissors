@@ -1,5 +1,5 @@
 const moves = ["rock", "paper", "scissors"];
-const results = ["Tied", "Win", "Lose"];
+const results = ["Tied! ", "You Win! ", "You Lose! "];
 const outcomes = {
     tie: "Try again ;)",
     rock: "Rock crushes Scissors",
@@ -19,25 +19,25 @@ function playRound(playerSelection, computerSelection) {
     console.log("Player selected " + playerSelection);
 
     if (playerSelection === computerSelection) {
-        return "Tied";
+        return (results[0] + outcomes["tie"]);
     }
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "Win";
+        return results[1];
     } else {
-        return "Lose";
+        return results[2];
     }
 
     if (playerSelection === "paper" && computerSelection === "rock") {
-        return "Win";
+        return results[1];
     } else {
-        return "Lose";
+        return results[2];
     }
 
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "Win";
+        return results[1];
     } else {
-        return "Lose";
+        return results[2];
     }
 }
 
