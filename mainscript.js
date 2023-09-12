@@ -51,7 +51,13 @@ function game() {
         console.log(playRound(getPlayerChoice(), getComputerChoice())); // switch between "playerSelection" and getPlayerChoice()
         console.log("Round " + i + " Score: " + score + "\n");
     }
-    console.log("Final Score: " + score)
+
+    if (score >= 3) {
+        console.log("Final Score: " + score + "\nYou Win!!");
+    } else {
+        console.log("Final Score: " + score + "\nComputer Wins!!");
+    }
+    
 }
 
 // const playerSelection = "rock";
