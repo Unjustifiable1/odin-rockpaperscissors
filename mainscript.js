@@ -14,17 +14,8 @@ function getComputerChoice () {
     return compMove;
 }
 
-// function getPlayerChoice() {
-//     let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "paper");
-//     return playerSelection.toLowerCase();
-// }
-
-// function playRound() {
-//     let playerSelection = getPlayerChoice();
-//     let computerSelection = getComputerChoice();
 
 function playRound(playerSelection) {
-    // let playerSelection = getPlayerChoice();
     let computerSelection = getComputerChoice();
 
     console.log("\nPlayer selected " + playerSelection);
@@ -58,24 +49,6 @@ function playRound(playerSelection) {
 
 
 // run game via console
-function logPlayRock() {
-    let round = playRound('rock');
-    console.log(round);
-    return round;
-}
-
-function logPlayPaper() {
-    let round = playRound('paper');
-    console.log(round);
-    return round;
-}
-
-function logPlayScissors() {
-    let round = playRound('scissors');
-    console.log(round);
-    return round;
-}
-
 function logPlayRound(playerSelection) {
     let round = playRound(playerSelection);
     console.log(round);
@@ -85,16 +58,6 @@ function logPlayRound(playerSelection) {
 
 // RPS-UI controls
 
-// const btnRock = document.querySelector('#btnRock');
-// btnRock.addEventListener('click', logPlayRock);
-
-// const btnPaper = document.querySelector('#btnPaper');
-// btnPaper.addEventListener('click', logPlayPaper);
-
-// const btnScissors = document.querySelector('#btnScissors');
-// btnScissors.addEventListener('click', logPlayScissors);
-
-
 const btns = document.querySelectorAll('#btn');
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -102,12 +65,3 @@ btns.forEach((btn) => {
         logPlayRound(playerSelection);
     });
 });
-
-
-
-// const clickButtons = document.querySelectorAll('#container Button');
-// clickButtons.forEach((clickButton) => {
-//     clickButton.addEventListener('click', () => {
-//         alert(clickButton.textContent);
-//     }); 
-// });
