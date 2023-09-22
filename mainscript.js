@@ -19,9 +19,14 @@ function getPlayerChoice() {
     return playerSelection.toLowerCase();
 }
 
-function playRound() {
-    let playerSelection = getPlayerChoice();
+// function playRound() {
+//     let playerSelection = getPlayerChoice();
+//     let computerSelection = getComputerChoice();
+
+function playRound(playerSelection) {
+    // let playerSelection = getPlayerChoice();
     let computerSelection = getComputerChoice();
+
     console.log("Player selected " + playerSelection);
     console.log("Computer selected " + computerSelection);
 
@@ -48,14 +53,25 @@ function playRound() {
         return (results[1] + outcomes[playerSelection]);
     } else if (playerSelection === "scissors") {
         return (results[2] + outcomes[computerSelection]);
-    } else {
-        return console.log("buggy");
     }
 }
 
 
-function logPlayRound () {
-    let round = playRound();
+// run game via console
+function logPlayRock() {
+    let round = playRound('rock');
+    console.log(round);
+    return round;
+}
+
+function logPlayPaper() {
+    let round = playRound('paper');
+    console.log(round);
+    return round;
+}
+
+function logPlayScissors() {
+    let round = playRound('scissors');
     console.log(round);
     return round;
 }
@@ -63,8 +79,15 @@ function logPlayRound () {
 
 // RPS-UI controls
 
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', logPlayRound);
+const btnRock = document.querySelector('#btnRock');
+btnRock.addEventListener('click', logPlayRock);
+
+const btnPaper = document.querySelector('#btnPaper');
+btnPaper.addEventListener('click', logPlayPaper);
+
+const btnScissors = document.querySelector('#btnScissors');
+btnScissors.addEventListener('click', logPlayScissors);
+
 
 
 
