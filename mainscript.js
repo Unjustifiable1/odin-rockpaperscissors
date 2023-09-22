@@ -14,10 +14,10 @@ function getComputerChoice () {
     return compMove;
 }
 
-function getPlayerChoice() {
-    let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "paper");
-    return playerSelection.toLowerCase();
-}
+// function getPlayerChoice() {
+//     let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "paper");
+//     return playerSelection.toLowerCase();
+// }
 
 // function playRound() {
 //     let playerSelection = getPlayerChoice();
@@ -27,7 +27,7 @@ function playRound(playerSelection) {
     // let playerSelection = getPlayerChoice();
     let computerSelection = getComputerChoice();
 
-    console.log("Player selected " + playerSelection);
+    console.log("\nPlayer selected " + playerSelection);
     console.log("Computer selected " + computerSelection);
 
     if (playerSelection === computerSelection) {
@@ -76,34 +76,38 @@ function logPlayScissors() {
     return round;
 }
 
+function logPlayRound(playerSelection) {
+    let round = playRound(playerSelection);
+    console.log(round);
+    return round;
+}
+
 
 // RPS-UI controls
 
-const btnRock = document.querySelector('#btnRock');
-btnRock.addEventListener('click', logPlayRock);
+// const btnRock = document.querySelector('#btnRock');
+// btnRock.addEventListener('click', logPlayRock);
 
-const btnPaper = document.querySelector('#btnPaper');
-btnPaper.addEventListener('click', logPlayPaper);
+// const btnPaper = document.querySelector('#btnPaper');
+// btnPaper.addEventListener('click', logPlayPaper);
 
-const btnScissors = document.querySelector('#btnScissors');
-btnScissors.addEventListener('click', logPlayScissors);
-
-
+// const btnScissors = document.querySelector('#btnScissors');
+// btnScissors.addEventListener('click', logPlayScissors);
 
 
+const btns = document.querySelectorAll('#btn');
+btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let playerSelection = btn.textContent.toLowerCase();
+        logPlayRound(playerSelection);
+    });
+});
 
 
 
-// function game() {   // for console only game
-//     for (let i = 1; i <= 5; i++){
-//         console.log(playRound(getPlayerChoice(), getComputerChoice())); // switch between "playerSelection" and getPlayerChoice()
-//         console.log("Round " + i + " Score: " + score + "\n");
-//     }
-
-//     if (score >= 3) {
-//         console.log("Final Score: " + score + "\nYou Win!!");
-//     } else {
-//         console.log("Final Score: " + score + "\nComputer Wins!!");
-//     }
-    
-// }
+// const clickButtons = document.querySelectorAll('#container Button');
+// clickButtons.forEach((clickButton) => {
+//     clickButton.addEventListener('click', () => {
+//         alert(clickButton.textContent);
+//     }); 
+// });
