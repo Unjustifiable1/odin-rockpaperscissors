@@ -11,14 +11,19 @@ let score = 0;
 
 function getComputerChoice () {
     let compMove = moves[Math.floor(Math.random()*moves.length)];
-
-    console.log("Computer selected " + compMove);
     return compMove;
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function getPlayerChoice() {
+    let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "paper");
+    return playerSelection.toLowerCase();
+}
+
+function playRound() {
+    let playerSelection = getPlayerChoice();
+    let computerSelection = getComputerChoice();
     console.log("Player selected " + playerSelection);
+    console.log("Computer selected " + computerSelection);
 
     if (playerSelection === computerSelection) {
         return (results[0] + outcomes["tie"]);
@@ -43,32 +48,39 @@ function playRound(playerSelection, computerSelection) {
         return (results[1] + outcomes[playerSelection]);
     } else if (playerSelection === "scissors") {
         return (results[2] + outcomes[computerSelection]);
-    }
-}
-
-function game() {
-    for (let i = 1; i <= 5; i++){
-        console.log(playRound(getPlayerChoice(), getComputerChoice())); // switch between "playerSelection" and getPlayerChoice()
-        console.log("Round " + i + " Score: " + score + "\n");
-    }
-
-    if (score >= 3) {
-        console.log("Final Score: " + score + "\nYou Win!!");
     } else {
-        console.log("Final Score: " + score + "\nComputer Wins!!");
+        return console.log("buggy");
     }
+}
+
+
+function logPlayRound () {
+    let round = playRound();
+    console.log(round);
+    return round;
+}
+
+
+// RPS-UI controls
+
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', logPlayRound);
+
+
+
+
+
+
+// function game() {   // for console only game
+//     for (let i = 1; i <= 5; i++){
+//         console.log(playRound(getPlayerChoice(), getComputerChoice())); // switch between "playerSelection" and getPlayerChoice()
+//         console.log("Round " + i + " Score: " + score + "\n");
+//     }
+
+//     if (score >= 3) {
+//         console.log("Final Score: " + score + "\nYou Win!!");
+//     } else {
+//         console.log("Final Score: " + score + "\nComputer Wins!!");
+//     }
     
-}
-
-// const playerSelection = "rock";
-function getPlayerChoice() {
-    let playerSelection = prompt("Player choice? Rock, Paper or Scissors?", "Rock");
-    return playerSelection;
-}
-
-// const computerSelection = getComputerChoice();
-
-// const singleRound = playRound(playerSelection, computerSelection);
-// console.log(singleRound);
-
-// const playGame = game();
+// }
