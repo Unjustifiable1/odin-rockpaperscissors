@@ -71,4 +71,4 @@ function getPlayerChoice() {
 // const singleRound = playRound(playerSelection, computerSelection);
 // console.log(singleRound);
 
-const playGame = game();
+// const playGame = game();
