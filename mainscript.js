@@ -1,3 +1,4 @@
+// standard assets - moves, results, outcomes
 const moves = ["rock", "paper", "scissors"];
 const results = ["Tied! ", "You Win! ", "You Lose! "];
 const outcomes = {
@@ -12,10 +13,16 @@ const outcomes = {
 let score = [0, 0];
 let gameNumber = 0;
 let tally = [];
+let gameOver = false;
 const resetRPS = () => {
     score = [0, 0];
+    playerScore.textContent = score[0];
+    computerScore.textContent = score[1];
     gameNumber = 0;
     tally = [];
+    gamesTally.textContent = "";
+    gameOver = false;
+    winner.textContent = "First to 5, wins the game!";
 }
 
 
@@ -28,14 +35,17 @@ function getComputerChoice () {
 
 // play a round of RPS and provide gameResult
 function playRound(playerSelection) {
+
+    if (gameOver === true) {
+        resetRPS();
+        return;
+    }
+
     let computerSelection = getComputerChoice();
 
     // ui: selected player and computer moves displayed
     playerMove.textContent = playerSelection;
     computerMove.textContent = computerSelection;
-
-    console.log("\nPlayer selected " + playerSelection);
-    console.log("Computer selected " + computerSelection);
 
     if (playerSelection === computerSelection) {
         resultOutcome = (results[0] + outcomes["tie"]);
@@ -44,33 +54,36 @@ function playRound(playerSelection) {
     }
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        score++;
+        score[0]++;
         resultOutcome = (results[1] + outcomes[playerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
     } else if (playerSelection === "rock") {
+        score[1]++;
         resultOutcome = (results[2] + outcomes[computerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
     }
 
     if (playerSelection === "paper" && computerSelection === "rock") {
-        score++;
+        score[0]++;
         resultOutcome = (results[1] + outcomes[playerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
     } else if (playerSelection === "paper") {
+        score[1]++;
         resultOutcome = (results[2] + outcomes[computerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
     }
 
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        score++;
+        score[0]++;
         resultOutcome = (results[1] + outcomes[playerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
     } else if (playerSelection === "scissors") {
+        score[1]++;
         resultOutcome = (results[2] + outcomes[computerSelection]);
         gameResult(resultOutcome);
         return resultOutcome;
@@ -85,6 +98,8 @@ const computerMove = document.querySelector('#computerMove');
 const playerScore = document.querySelector('#playerScore');
 const computerScore = document.querySelector('#computerScore');
 const announceResult = document.querySelector('#announceResult');
+const gamesTally = document.querySelector('#gamesTally');
+const winner = document.querySelector('#winner');
 
 
 // ui: Game start and player move button controls
@@ -99,4 +114,29 @@ btns.forEach((btn) => {
 // ui: announce result of individual game
 function gameResult(resultOutcome) {
     announceResult.textContent = resultOutcome;
+    tally.push(resultOutcome);
+    gameNumber++;
+    gamesTally.textContent = tallyUpdate (tally, gameNumber);
+    playerScore.textContent = score[0];
+    computerScore.textContent = score[1];
+    console.log("Game Number " + gameNumber + " - Score " + score);
+    // ui: announce winner
+    if (score[0] === 5 || score[1] === 5) {
+        if (score[0] === 5) {
+        winner.textContent = "Game Over | YOU WON!!"
+        } else {
+            winner.textContent = "Game Over | YOU LOST!!"
+        }
+        gameOver = true;
+    }
 }
+
+// ui: update tally
+function tallyUpdate (tally, gameNumber) {
+    let output = "";
+    for (let i = 0; i < gameNumber; i++) {
+        output += (i + 1) + " " + tally[i] + "\n";
+    }
+    return output;
+}
+
