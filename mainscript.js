@@ -18,6 +18,10 @@ function getComputerChoice () {
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
 
+    // ui: set player and computer moves
+    playerMove.textContent = playerSelection;
+    computerMove.textContent = computerSelection;
+
     console.log("\nPlayer selected " + playerSelection);
     console.log("Computer selected " + computerSelection);
 
@@ -57,11 +61,18 @@ function logPlayRound(playerSelection) {
 
 
 // RPS-UI controls
-
 const btns = document.querySelectorAll('#btn');
+const playerMove = document.querySelector('#playerMove');
+const computerMove = document.querySelector('#computerMove');
+const playerScore = document.querySelector('#playerScore');
+const computerScore = document.querySelector('#computerScore');
+
+
+// ui: player move button controls
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
         let playerSelection = btn.textContent.toLowerCase();
         logPlayRound(playerSelection);
     });
 });
+
