@@ -7,18 +7,30 @@ const outcomes = {
     scissors: "Scissors cut Paper"
 }
 
-let score = 0;
 
+// default game parameters
+let score = [0, 0];
+let gameNumber = 0;
+let tally = [];
+const resetRPS = () => {
+    score = [0, 0];
+    gameNumber = 0;
+    tally = [];
+}
+
+
+// obtain random computer choice
 function getComputerChoice () {
     let compMove = moves[Math.floor(Math.random()*moves.length)];
     return compMove;
 }
 
 
+// play a round of RPS and provide gameResult
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
 
-    // ui: set player and computer moves
+    // ui: selected player and computer moves displayed
     playerMove.textContent = playerSelection;
     computerMove.textContent = computerSelection;
 
@@ -26,37 +38,43 @@ function playRound(playerSelection) {
     console.log("Computer selected " + computerSelection);
 
     if (playerSelection === computerSelection) {
-        return (results[0] + outcomes["tie"]);
+        resultOutcome = (results[0] + outcomes["tie"]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     }
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
         score++;
-        return (results[1] + outcomes[playerSelection]);
+        resultOutcome = (results[1] + outcomes[playerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     } else if (playerSelection === "rock") {
-        return (results[2] + outcomes[computerSelection]);
+        resultOutcome = (results[2] + outcomes[computerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     }
 
     if (playerSelection === "paper" && computerSelection === "rock") {
         score++;
-        return (results[1] + outcomes[playerSelection]);
+        resultOutcome = (results[1] + outcomes[playerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     } else if (playerSelection === "paper") {
-        return (results[2] + outcomes[computerSelection]);
+        resultOutcome = (results[2] + outcomes[computerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     }
 
     if (playerSelection === "scissors" && computerSelection === "paper") {
         score++;
-        return (results[1] + outcomes[playerSelection]);
+        resultOutcome = (results[1] + outcomes[playerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     } else if (playerSelection === "scissors") {
-        return (results[2] + outcomes[computerSelection]);
+        resultOutcome = (results[2] + outcomes[computerSelection]);
+        gameResult(resultOutcome);
+        return resultOutcome;
     }
-}
-
-
-// run game via console
-function logPlayRound(playerSelection) {
-    let round = playRound(playerSelection);
-    console.log(round);
-    return round;
 }
 
 
@@ -66,13 +84,19 @@ const playerMove = document.querySelector('#playerMove');
 const computerMove = document.querySelector('#computerMove');
 const playerScore = document.querySelector('#playerScore');
 const computerScore = document.querySelector('#computerScore');
+const announceResult = document.querySelector('#announceResult');
 
 
-// ui: player move button controls
+// ui: Game start and player move button controls
 btns.forEach((btn) => {
     btn.addEventListener('click', () => {
         let playerSelection = btn.textContent.toLowerCase();
-        logPlayRound(playerSelection);
+        playRound(playerSelection);
     });
 });
 
+
+// ui: announce result of individual game
+function gameResult(resultOutcome) {
+    announceResult.textContent = resultOutcome;
+}
