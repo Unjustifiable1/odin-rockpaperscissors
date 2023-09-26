@@ -14,6 +14,8 @@ let score = [0, 0];
 let gameNumber = 0;
 let tally = [];
 let gameOver = false;
+
+// reset game parameters
 const resetRPS = () => {
     score = [0, 0];
     playerScore.textContent = score[0];
