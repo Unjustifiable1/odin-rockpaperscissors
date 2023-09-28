@@ -1,6 +1,6 @@
 * {
     font: inherit;
-    font-family: var(--ff-primary);
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -9,10 +9,37 @@
     border: 1px solid red;
 }
 
+header, footer {
+    background-color: darkslategrey;
+    color: lightgoldenrodyellow;
+    padding: 1em;
+}
+
 .gameSection {
     background-color: lightskyblue;
     width: 80%;
-    margin: 1rem auto;
+    margin: 2em auto;
+    padding: 2rem;
+}
+
+.selectionButtons {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.selectionButtons button {
+    font-size: 3rem;
+    font-weight: 900;
+    min-width: 25%;
+    aspect-ratio: 3/2;
+    border: 3px solid green;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.selectionButtons button:hover {
+    background-color: darkslateblue;
 }
 
 
@@ -21,6 +48,5 @@
 .attribution { 
     font-size: 11px; 
     text-align: center;
-    background-color: lightgray;
 }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: hsl(228, 32%, 55%); }

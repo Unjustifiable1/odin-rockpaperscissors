@@ -136,7 +136,7 @@ function gameResult(resultOutcome) {
 // ui: update tally
 function tallyUpdate (tally, gameNumber) {
     let output = "";
-    for (let i = 0; i < gameNumber; i++) {
+    for (let i = gameNumber -1; i >= 0; i--) {
         output += (i + 1) + " " + tally[i] + "\n";
     }
     return output;
