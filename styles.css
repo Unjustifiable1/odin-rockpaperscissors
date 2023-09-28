@@ -10,17 +10,66 @@
     /* border: 1px solid red; */
 }
 
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav ul { list-style-type: none; }
+
+nav li {
+    display: inline;
+    margin-right: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: lightgoldenrodyellow;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+}
+
+nav button {
+    padding: 0.25rem 1rem;
+    background-color: darkslategrey;
+    border: 2px solid lightgoldenrodyellow;
+    border-radius: 1rem;
+}
+
+nav button:hover, 
+nav a:hover {
+    color: #000;
+    background-color: hsl(115, 93%, 59%);
+}
+
+
+/* header and footer defaults */
+
 header, footer {
     background-color: darkslategrey;
     color: lightgoldenrodyellow;
-    padding: 1em;
+    padding: 0.25em 4em;
+}
+
+
+/* Game sections */
+
+.gameWelcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .gameSection {
     background-color: lightskyblue;
-    /* width: 80%; */
-    /* margin: 2em auto; */
     padding: 2rem;
+    border-radius: 2rem;
 }
 
 .selectionButtons {
@@ -32,7 +81,6 @@ header, footer {
 .selectionButtons button {
     font-size: 3rem;
     font-weight: 900;
-    /* min-width: 25%; */
     aspect-ratio: 3/2;
     border: 3px solid green;
     border-radius: 2rem;
@@ -44,18 +92,18 @@ header, footer {
 }
 
 
-/* redesigned from here */
+/* main - grid area*/
 
-/* main */
 main {
     display: grid;
+    grid-template-columns: 25% auto;
     gap: 1em;
     margin: 2em 4em;
 }
 
 .gameWelcome {
     grid-row: 1;
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 }
 
 .gameScore {
@@ -65,17 +113,17 @@ main {
 
 .gameSelection {
     grid-row: 2;
-    grid-column: 2 / span 2;
+    grid-column: 2;
 }
 
 .gameView {
     grid-row: 3;
-    grid-column: 2 / span 2;
+    grid-column: 2;
 }
 
 .gameHistory {
     grid-row: 4;
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 }
 
 
