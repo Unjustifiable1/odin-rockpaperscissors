@@ -25,6 +25,7 @@ const resetRPS = () => {
     gamesTally.textContent = "";
     gameOver = false;
     winner.textContent = "First to 5, wins the game!";
+    gamesTally.textContent = "Start the game to see the wins/losses history.";
 }
 
 
@@ -137,7 +138,7 @@ function gameResult(resultOutcome) {
 function tallyUpdate (tally, gameNumber) {
     let output = "";
     for (let i = gameNumber -1; i >= 0; i--) {
-        output += (i + 1) + " " + tally[i] + "\n";
+        output += "Game " + (i + 1) + " - " + tally[i] + " |\n";
     }
     return output;
 }

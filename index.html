@@ -7,6 +7,10 @@
     
     <script src="./mainscript.js" defer></script>
     <link rel="stylesheet" href="./styles.css">
+    <link type="image/png" sizes="16x16" rel="icon" href="./icons8-ninja-ios-16-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="./icons8-ninja-ios-16-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="./icons8-ninja-ios-16-96.png">
+
 </head>
 
 <body>
@@ -15,14 +19,14 @@
     </header>
     
     <main>
-        <section>
-            <h1>Hello World!</h1>
-            <h2>Welcome to...</h2>
+        <section class="gameWelcome gameSection">
+            <h2>Welcome to my</h2>
             <h1 class="gameName">
                 <span class="nameRock">Rock</span> 
                 <span class="namePaper">Paper</span> 
                 <span class="nameScissors">Scissors</span>
             </h1>
+            <h2>game...</h2>
         </section>
         
         <section class="gameSelection gameSection">
@@ -54,9 +58,12 @@
                 <div>Computer</div>
             </div>
             <div id="winner">First to 5, wins the game!</div>
+        </section>
+
+        <section class="gameHistory gameSection">
             <div>
                 Games tally:
-                <span id="gamesTally"></span>
+                <span id="gamesTally">Start the game to see the wins/losses history.</span>
             </div>
         </section>
 
@@ -64,7 +71,7 @@
     
     <footer>
         <div class="attribution">
-            Coded by <a href="https://github.com/Unjustifiable1/odin-rockpaperscissors" target="_blank">Unjustifiable1</a>.
+            <span>Rock, Paper, Scissors Game | Project by The Odin Project | Coded by </span><a href="https://github.com/Unjustifiable1/odin-rockpaperscissors" target="_blank">Unjustifiable1</a> <img src="./icons8-ninja-ios-16-32.png" alt="ninja icon by Icons8">
         </div>
     </footer>
 
