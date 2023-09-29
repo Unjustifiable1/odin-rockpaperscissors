@@ -5,4 +5,5 @@ Project: Rock Paper Scissors
 Foundations Course
 
 Images:
-ninja icon by Icons8
+ninja icon - by Icons8
+Rock paper scissors cartoon banners with hands - Image by upklyak on Freepik

@@ -47,26 +47,29 @@
         </section>
 
         <section class="gameView gameSection">
-            <div>
+            <div class="playerMove">
                 <div>Player Move</div>
                 <div id="playerMove">^</div>
             </div>
-            <div>
+            <div id="announceResult">Game ready</div>
+            <div class="computerMove">
                 <div>Computer Move</div>
                 <div id="computerMove">^</div>
             </div>
-            <div id="announceResult">Game ready</div>
         </section>
 
         <section class="gameScore gameSection">
-            <div><span>Current Score:</span><button id="reset">RESET?</button></div>
+            <!-- <div>
+                <img src="./rockpaperscissors_by_upklyak_on_freepik.jpg" alt="Image by upklyak on Freepik">
+            </div> -->
+            <div>Current Score:</div>
             <div class="currentScore">
                 <div class="playerScore">You <span id="playerScore">0</span></div>
                 <div>vs</div>
                 <div class="computerScore">Computer <span id="computerScore">0</span></div>
             </div>
             <div id="winner">First to 5, wins the game!</div>
-            <img src="" alt="">
+            <button id="reset">RESET?</button>
         </section>
 
         <section class="gameHistory gameSection">
