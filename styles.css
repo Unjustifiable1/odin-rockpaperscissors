@@ -1,3 +1,15 @@
+/* custom properties */
+:root {
+    --clr-primary-night: #13005A;
+    --clr-primary-darkblue: #00337C;
+    --clr-primary-blue: #1C82AD;
+    --clr-primary-seagreen: #03C988;
+    --clr-primary-darkslateblue: #483d8b;
+}
+
+
+/* set default parameters */
+
 * {
     font: inherit;
     font-family: Arial, Helvetica, sans-serif;
@@ -6,10 +18,15 @@
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
+    color: #fff;
 
     /* border: 1px solid red; */
 }
 
+
+body {
+background-color: #bbb;
+}
 
 /* Navigation */
 
@@ -32,6 +49,7 @@ nav a {
     color: lightgoldenrodyellow;
     padding: 0.25rem 1rem;
     border-radius: 1rem;
+    font-size: 12px;
 }
 
 nav button {
@@ -67,29 +85,12 @@ header, footer {
 }
 
 .gameSection {
-    background-color: lightskyblue;
-    padding: 2rem;
+    background-color: #000;
+    padding: 1rem;
     border-radius: 2rem;
+    box-shadow: 5px 5px 6px #555;
 }
 
-.selectionButtons {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.selectionButtons button {
-    font-size: 3rem;
-    font-weight: 900;
-    aspect-ratio: 3/2;
-    border: 3px solid green;
-    border-radius: 2rem;
-    cursor: pointer;
-}
-
-.selectionButtons button:hover {
-    background-color: darkslateblue;
-}
 
 
 /* main - grid area*/
@@ -98,7 +99,7 @@ main {
     display: grid;
     grid-template-columns: 25% auto;
     gap: 1em;
-    margin: 2em 4em;
+    margin: 1.5em 4em;
 }
 
 .gameWelcome {
@@ -125,6 +126,108 @@ main {
     grid-row: 4;
     grid-column: 1 / span 2;
 }
+
+
+/* Welcome section */
+
+.gameName span {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* Game Selection section */
+
+.selectionButtons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.selectionButtons button {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 900;
+    aspect-ratio: 3/2;
+    border: 3px solid #ddd;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: min(30%, 200px);
+}
+
+.selectionButtons button:hover {
+    background-color: var(--clr-primary-darkslateblue);
+}
+
+.btnRock {
+    background-color: var(--clr-primary-darkblue);
+}
+
+.btnPaper {
+    background-color: var(--clr-primary-seagreen);
+}
+
+.btnScissors {
+    background-color: var(--clr-primary-blue);
+}
+
+
+
+/* Game View section */
+
+
+
+
+/* Game Score section */
+
+.gameScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.currentScore * {
+    font-size: 2rem;
+}
+
+#reset {
+    background-color: #000;
+    padding: 0.5rem 1rem;
+    border: #ddd solid 3px;
+    border-radius: 2rem;
+    margin-left: 1.5rem;
+}
+
+#reset:hover {
+    background-color: var(--clr-primary-darkslateblue);
+}
+
+#playerScore {
+    color: green;
+}
+
+#computerScore {
+    color: red;
+}
+
+.playerScore {
+    text-decoration: underline green double 2px;
+}
+
+.computerScore {
+    text-decoration: underline red double 2px;
+}
+
+
+
+
+
+/* Game History section*/
+
+
 
 
 /* attribution */

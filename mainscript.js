@@ -24,6 +24,9 @@ const resetRPS = () => {
     tally = [];
     gamesTally.textContent = "";
     gameOver = false;
+    playerMove.textContent = "^";
+    computerMove.textContent = "^";
+    announceResult.textContent = "Game ready";
     winner.textContent = "First to 5, wins the game!";
     gamesTally.textContent = "Start the game to see the wins/losses history.";
 }
@@ -103,6 +106,7 @@ const computerScore = document.querySelector('#computerScore');
 const announceResult = document.querySelector('#announceResult');
 const gamesTally = document.querySelector('#gamesTally');
 const winner = document.querySelector('#winner');
+const reset = document.querySelector('#reset');
 
 
 // ui: Game start and player move button controls
@@ -112,6 +116,7 @@ btns.forEach((btn) => {
         playRound(playerSelection);
     });
 });
+
 
 
 // ui: announce result of individual game
@@ -143,3 +148,6 @@ function tallyUpdate (tally, gameNumber) {
     return output;
 }
 
+
+// ui: reset button
+reset.addEventListener('click', () => resetRPS());

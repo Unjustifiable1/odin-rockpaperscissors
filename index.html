@@ -30,15 +30,15 @@
         <section class="gameWelcome gameSection">
             <h2>Welcome to my</h2>
             <h1 class="gameName">
-                <span class="nameRock">Rock</span> 
-                <span class="namePaper">Paper</span> 
+                <span class="nameRock">Rock </span> 
+                <span class="namePaper">Paper </span> 
                 <span class="nameScissors">Scissors</span>
             </h1>
             <h2>game...</h2>
         </section>
         
         <section class="gameSelection gameSection">
-            <span>What's your next move?</span>
+            <div>What's your next move?</div>
             <div class="selectionButtons">
                 <button class="btnRock" id="btn">Rock</button>
                 <button class="btnPaper" id="btn">Paper</button>
@@ -59,13 +59,14 @@
         </section>
 
         <section class="gameScore gameSection">
-            <div>Current Score</div>
-            <div>
-                <div>You</div>
-                <div><span id="playerScore">0</span> - <span id="computerScore">0</span></div>
-                <div>Computer</div>
+            <div><span>Current Score:</span><button id="reset">RESET?</button></div>
+            <div class="currentScore">
+                <div class="playerScore">You <span id="playerScore">0</span></div>
+                <div>vs</div>
+                <div class="computerScore">Computer <span id="computerScore">0</span></div>
             </div>
             <div id="winner">First to 5, wins the game!</div>
+            <img src="" alt="">
         </section>
 
         <section class="gameHistory gameSection">
@@ -79,7 +80,7 @@
     
     <footer>
         <div class="attribution">
-            <span>Rock, Paper, Scissors Game | Project by The Odin Project | Coded by </span><a href="https://github.com/Unjustifiable1/odin-rockpaperscissors" target="_blank">Unjustifiable1</a> <img src="./icons8-ninja-ios-16-32.png" alt="ninja icon by Icons8">
+            <span>2023 | Rock, Paper, Scissors Game | Project by The Odin Project | Coded by </span><a href="https://github.com/Unjustifiable1/odin-rockpaperscissors" target="_blank">Unjustifiable1</a> <img src="./icons8-ninja-ios-16-32.png" alt="ninja icon by Icons8">
         </div>
     </footer>
 
