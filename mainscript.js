@@ -24,8 +24,8 @@ const resetRPS = () => {
     tally = [];
     gamesTally.textContent = "";
     gameOver = false;
-    playerMove.textContent = "^";
-    computerMove.textContent = "^";
+    playerMove.textContent = "d -_- b";
+    computerMove.textContent = "d -_- b";
     announceResult.textContent = "Game ready";
     winner.textContent = "First to 5, wins the game!";
     gamesTally.textContent = "Start the game to see the wins/losses history.";
